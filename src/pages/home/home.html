@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Input:</ion-label>
+    <ion-input type="text" (input)="input($event)" ></ion-input>
+  </ion-item>
+  <p>{{vinput}}</p>
+
+  <ion-item>
+    <ion-label floating>Keydown:</ion-label>
+    <ion-input type="text" (keydown)="keydown($event)"></ion-input>
+  </ion-item>
+  <p>{{vkeydown}}</p>
+  <p>(1 a disparar e pode ser parado)</p>
+  
+  <ion-item>
+    <ion-label floating>Keypress:</ion-label>
+    <ion-input type="text" (keypress)="keypress($event)"></ion-input>
+  </ion-item>
+  <p>{{vkeypress}}</p>
+  <p>(2 a disparar e nao dispara teclas que que gera caracter: F1 ~ F12, tab, esc, etc.)</p>
+
+  <ion-item>
+    <ion-label floating>KeyUp:</ion-label>
+    <ion-input type="text" (keyup)="keyup($event)"></ion-input>
+  </ion-item>
+  <p>{{vkeyup}}</p>
+  <p>(disparado quando a tecla é largada, e seu input é adicionado ao DOM)</p>
+
+  <ion-item>
+    <ion-label floating>KeyUp Enter:</ion-label>
+    <ion-input type="text" (keyup.enter)="keyupEnter($event)"></ion-input>
+  </ion-item>
+  <p>{{vkeyupEnter}}</p>
+  <p>(disparado quando a tecla ENTER é precionada, e seu input é adicionado ao DOM)</p>
+
+  <ion-item>
+    <ion-label floating>Blur:</ion-label>
+    <ion-input type="text" (blur)="blur($event)"></ion-input>
+  </ion-item>
+  <p>{{vblur}}</p>
+  <p>(disparado quando o input perde o foco)</p>
+
+  <ion-item>
+    <ion-label floating>Focus:</ion-label>
+    <ion-input type="text" (focus)="focus($event)"></ion-input>
+  </ion-item>
+  <p>{{vfocus}}</p>
+  <p>(disparado quando o input recebe o foco)</p>
+
+  <button ion-button (click)="clear()">
+    Limapr Tudo
+  </button>
+  
+</ion-content>
